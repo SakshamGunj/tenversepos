@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TenVerse POS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/logo.svg" alt="TenVerse POS">
+                <span class="logo-text">TenVerse</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>POS</span>
+                </a>
+                <a href="menu-dashboard.html" class="menu-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Menu</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-box"></i>
+                    <span>Inventory</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search anything, find everything">
+                </div>
+                <div class="user-actions">
+                    <span class="store-name">Café TenVerse</span>
+                    <div class="user-profile">
+                        <img src="assets/avatar.svg" alt="User Avatar">
+                        <div class="user-dropdown">
+                            <span class="username">John Doe</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </header>
+
+            <!-- POS Main Area -->
+            <div class="pos-container">
+                <!-- Category Filters -->
+                <div class="category-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Food</button>
+                    <button class="filter-btn">Beverages</button>
+                    <button class="filter-btn">Desserts</button>
+                    <button class="filter-btn">Special</button>
+                    <div class="view-toggle">
+                        <button class="toggle-btn active"><i class="fas fa-list"></i></button>
+                        <button class="toggle-btn"><i class="fas fa-th-large"></i></button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid">
+                    <!-- Product Cards -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/products/coffee.jpg" alt="Coffee">
+                        </div>
+                        <div class="product-info">
+                            <h3>Cappuccino</h3>
+                            <p class="price">$4.50</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/products/sandwich.jpg" alt="Sandwich">
+                        </div>
+                        <div class="product-info">
+                            <h3>Club Sandwich</h3>
+                            <p class="price">$8.99</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/products/cake.jpg" alt="Cake">
+                        </div>
+                        <div class="product-info">
+                            <h3>Chocolate Cake</h3>
+                            <p class="price">$6.50</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/products/salad.jpg" alt="Salad">
+                        </div>
+                        <div class="product-info">
+                            <h3>Caesar Salad</h3>
+                            <p class="price">$7.99</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/products/burger.jpg" alt="Burger">
+                        </div>
+                        <div class="product-info">
+                            <h3>Cheese Burger</h3>
+                            <p class="price">$9.50</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/products/pasta.jpg" alt="Pasta">
+                        </div>
+                        <div class="product-info">
+                            <h3>Spaghetti</h3>
+                            <p class="price">$11.99</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/products/juice.jpg" alt="Juice">
+                        </div>
+                        <div class="product-info">
+                            <h3>Fresh Orange Juice</h3>
+                            <p class="price">$3.99</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/products/tea.jpg" alt="Tea">
+                        </div>
+                        <div class="product-info">
+                            <h3>Green Tea</h3>
+                            <p class="price">$3.50</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Order Section -->
+        <aside class="order-section">
+            <div class="order-header">
+                <h2>Order List</h2>
+                <p class="order-date">Wed, Aug 25 2023 | 09:45:23</p>
+            </div>
+
+            <div class="order-search">
+                <input type="text" placeholder="Search order items...">
+                <i class="fas fa-search"></i>
+            </div>
+
+            <div class="order-items">
+                <div class="order-item">
+                    <div class="item-details">
+                        <h3>Cappuccino</h3>
+                        <p class="item-price">$4.50</p>
+                    </div>
+                    <div class="item-quantity">
+                        <button class="quantity-btn dec">-</button>
+                        <span class="quantity">2</span>
+                        <button class="quantity-btn inc">+</button>
+                    </div>
+                    <p class="item-total">$9.00</p>
+                    <button class="remove-item"><i class="fas fa-times"></i></button>
+                </div>
+
+                <div class="order-item">
+                    <div class="item-details">
+                        <h3>Club Sandwich</h3>
+                        <p class="item-price">$8.99</p>
+                    </div>
+                    <div class="item-quantity">
+                        <button class="quantity-btn dec">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn inc">+</button>
+                    </div>
+                    <p class="item-total">$8.99</p>
+                    <button class="remove-item"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <div class="order-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>$17.99</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (10%)</span>
+                    <span>$1.80</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>$19.79</span>
+                </div>
+            </div>
+
+            <div class="order-actions">
+                <button class="action-btn save"><i class="fas fa-save"></i></button>
+                <button class="action-btn print"><i class="fas fa-print"></i></button>
+                <button class="pay-btn">Pay <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </aside>
+    </div>
+
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Payment</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-details">
+                    <div class="detail-row">
+                        <span>Total Amount</span>
+                        <span class="amount">$19.79</span>
+                    </div>
+                    <div class="payment-methods">
+                        <button class="payment-method active">Cash</button>
+                        <button class="payment-method">Card</button>
+                        <button class="payment-method">Mobile</button>
+                    </div>
+                    <div class="payment-input">
+                        <label for="received-amount">Received Amount</label>
+                        <input type="number" id="received-amount" value="20.00">
+                    </div>
+                    <div class="change-amount">
+                        <span>Change</span>
+                        <span class="amount">$0.21</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn">Cancel</button>
+                <button class="confirm-btn">Confirm Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/pos.js"></script>
+</body>
+</html> 

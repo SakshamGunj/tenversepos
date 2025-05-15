@@ -1,0 +1,25 @@
+/* KDS CSS */
+.empty-kds {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+    background-color: #2A2D3E;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    grid-column: 1 / -1;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.empty-kds i {
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+}
+
+.empty-kds p {
+    font-size: 16px;
+    margin: 5px 0;
+} 

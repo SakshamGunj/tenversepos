@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Cards & Coupons - TenVerse POS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/pos.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/gift-coupons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/logo.svg" alt="TenVerse POS">
+                <span class="logo-text">TenVerse</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="pos.html" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>POS</span>
+                </a>
+                <a href="orders.html" class="menu-item">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Orders</span>
+                </a>
+                <a href="kds.html" class="menu-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Kitchen</span>
+                </a>
+                <a href="menu-dashboard.html" class="menu-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Menu</span>
+                </a>
+                <a href="customers.html" class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                </a>
+                <a href="gift-coupons.html" class="menu-item active">
+                    <i class="fas fa-gift"></i>
+                    <span>Gift & Coupons</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <div class="user-details">
+                            <span class="user-name">John Doe</span>
+                            <span class="user-role">Admin</span>
+                        </div>
+                        <div class="user-avatar">
+                            <img src="assets/avatar.jpg" alt="User Avatar">
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </header>
+
+            <!-- Gift Cards & Coupons Dashboard -->
+            <div class="gift-coupons-container">
+                <!-- Tabs -->
+                <div class="gift-coupons-tabs">
+                    <button class="tab-btn active" data-tab="gift-cards">Gift Cards</button>
+                    <button class="tab-btn" data-tab="coupons">Coupons</button>
+                </div>
+
+                <!-- Gift Cards Tab -->
+                <div class="tab-content active" id="gift-cards">
+                    <div class="section-header">
+                        <h2>Gift Cards</h2>
+                        <div class="action-buttons">
+                            <button class="add-btn" id="addGiftCardBtn"><i class="fas fa-plus"></i> Add Gift Card</button>
+                            <div class="search-box">
+                                <input type="text" id="giftCardSearch" placeholder="Search gift card...">
+                                <button id="giftCardSearchBtn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid" id="giftCardsGrid">
+                        <!-- Gift cards will be populated here -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Gift Card #GC001</h3>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-info">
+                                    <div class="info-item">
+                                        <span class="label">Balance:</span>
+                                        <span class="value">$50.00</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Issued:</span>
+                                        <span class="value">May 10, 2025</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Expires:</span>
+                                        <span class="value">May 10, 2026</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="action-btn view-btn" data-id="GC001"><i class="fas fa-eye"></i> View</button>
+                                <button class="action-btn redeem-btn" data-id="GC001"><i class="fas fa-check"></i> Redeem</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Gift Card #GC002</h3>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-info">
+                                    <div class="info-item">
+                                        <span class="label">Balance:</span>
+                                        <span class="value">$100.00</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Issued:</span>
+                                        <span class="value">May 12, 2025</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Expires:</span>
+                                        <span class="value">May 12, 2026</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="action-btn view-btn" data-id="GC002"><i class="fas fa-eye"></i> View</button>
+                                <button class="action-btn redeem-btn" data-id="GC002"><i class="fas fa-check"></i> Redeem</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Gift Card #GC003</h3>
+                                <span class="status used">Used</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-info">
+                                    <div class="info-item">
+                                        <span class="label">Balance:</span>
+                                        <span class="value">$0.00</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Issued:</span>
+                                        <span class="value">May 5, 2025</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Used:</span>
+                                        <span class="value">May 8, 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="action-btn view-btn" data-id="GC003"><i class="fas fa-eye"></i> View</button>
+                                <button class="action-btn redeem-btn" data-id="GC003" disabled><i class="fas fa-check"></i> Redeem</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coupons Tab -->
+                <div class="tab-content" id="coupons">
+                    <div class="section-header">
+                        <h2>Coupons</h2>
+                        <div class="action-buttons">
+                            <button class="add-btn" id="addCouponBtn"><i class="fas fa-plus"></i> Add Coupon</button>
+                            <div class="search-box">
+                                <input type="text" id="couponSearch" placeholder="Search coupon...">
+                                <button id="couponSearchBtn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid" id="couponsGrid">
+                        <!-- Coupons will be populated here -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Coupon #CP001</h3>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-info">
+                                    <div class="info-item">
+                                        <span class="label">Code:</span>
+                                        <span class="value">WELCOME25</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Discount:</span>
+                                        <span class="value">25% off</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Valid Until:</span>
+                                        <span class="value">June 30, 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="action-btn view-btn" data-id="CP001"><i class="fas fa-eye"></i> View</button>
+                                <button class="action-btn redeem-btn" data-id="CP001"><i class="fas fa-check"></i> Redeem</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Coupon #CP002</h3>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-info">
+                                    <div class="info-item">
+                                        <span class="label">Code:</span>
+                                        <span class="value">SUMMER10</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Discount:</span>
+                                        <span class="value">$10 off</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Valid Until:</span>
+                                        <span class="value">August 31, 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="action-btn view-btn" data-id="CP002"><i class="fas fa-eye"></i> View</button>
+                                <button class="action-btn redeem-btn" data-id="CP002"><i class="fas fa-check"></i> Redeem</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Coupon #CP003</h3>
+                                <span class="status expired">Expired</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-info">
+                                    <div class="info-item">
+                                        <span class="label">Code:</span>
+                                        <span class="value">SPRING15</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Discount:</span>
+                                        <span class="value">15% off</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="label">Valid Until:</span>
+                                        <span class="value">April 30, 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="action-btn view-btn" data-id="CP003"><i class="fas fa-eye"></i> View</button>
+                                <button class="action-btn redeem-btn" data-id="CP003" disabled><i class="fas fa-check"></i> Redeem</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Gift Card Details Modal -->
+    <div id="giftCardModal" class="modal">
+        <div class="modal-content gift-card-detail-modal">
+            <div class="modal-header">
+                <h2>Gift Card Details</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="gift-card-details">
+                    <div class="gift-card-header">
+                        <h3 id="giftCardNumber">Gift Card #GC001</h3>
+                        <span class="status active" id="giftCardStatus">Active</span>
+                    </div>
+                    <div class="gift-card-info">
+                        <div class="info-row">
+                            <span class="label">Card Number:</span>
+                            <span class="value" id="giftCardId">GC001</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Balance:</span>
+                            <span class="value" id="giftCardBalance">$50.00</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Original Amount:</span>
+                            <span class="value" id="giftCardOriginal">$50.00</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Issued Date:</span>
+                            <span class="value" id="giftCardIssued">May 10, 2025</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Expiry Date:</span>
+                            <span class="value" id="giftCardExpiry">May 10, 2026</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Customer:</span>
+                            <span class="value" id="giftCardCustomer">John Smith</span>
+                        </div>
+                    </div>
+                    <div class="gift-card-transactions">
+                        <h4>Transaction History</h4>
+                        <table class="transactions-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type</th>
+                                    <th>Amount</th>
+                                    <th>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody id="giftCardTransactions">
+                                <tr>
+                                    <td>May 10, 2025</td>
+                                    <td>Issued</td>
+                                    <td>+$50.00</td>
+                                    <td>$50.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="closeGiftCardBtn">Close</button>
+                <button class="redeem-btn" id="redeemGiftCardBtn"><i class="fas fa-check"></i> Redeem</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coupon Details Modal -->
+    <div id="couponModal" class="modal">
+        <div class="modal-content coupon-detail-modal">
+            <div class="modal-header">
+                <h2>Coupon Details</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="coupon-details">
+                    <div class="coupon-header">
+                        <h3 id="couponNumber">Coupon #CP001</h3>
+                        <span class="status active" id="couponStatus">Active</span>
+                    </div>
+                    <div class="coupon-info">
+                        <div class="info-row">
+                            <span class="label">Coupon Code:</span>
+                            <span class="value" id="couponCode">WELCOME25</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Discount Type:</span>
+                            <span class="value" id="couponType">Percentage</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Discount Value:</span>
+                            <span class="value" id="couponValue">25%</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Minimum Order:</span>
+                            <span class="value" id="couponMinOrder">$20.00</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Valid From:</span>
+                            <span class="value" id="couponValidFrom">May 1, 2025</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Valid Until:</span>
+                            <span class="value" id="couponValidUntil">June 30, 2025</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Usage Limit:</span>
+                            <span class="value" id="couponUsageLimit">1 per customer</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Description:</span>
+                            <span class="value" id="couponDescription">Welcome discount for new customers</span>
+                        </div>
+                    </div>
+                    <div class="coupon-usage">
+                        <h4>Usage History</h4>
+                        <table class="usage-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Order #</th>
+                                    <th>Customer</th>
+                                    <th>Discount Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody id="couponUsage">
+                                <!-- Usage history will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="closeCouponBtn">Close</button>
+                <button class="redeem-btn" id="redeemCouponBtn"><i class="fas fa-check"></i> Redeem</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redeem Gift Card Modal -->
+    <div id="redeemGiftCardModal" class="modal">
+        <div class="modal-content redeem-modal">
+            <div class="modal-header">
+                <h2>Redeem Gift Card</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="redeem-form">
+                    <div class="form-group">
+                        <label for="redeemGiftCardId">Gift Card Number</label>
+                        <input type="text" id="redeemGiftCardId" placeholder="Enter gift card number" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="redeemGiftCardBalance">Available Balance</label>
+                        <input type="text" id="redeemGiftCardBalance" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="redeemGiftCardAmount">Amount to Redeem</label>
+                        <input type="number" id="redeemGiftCardAmount" placeholder="Enter amount to redeem">
+                    </div>
+                    <div class="form-group">
+                        <label for="redeemGiftCardOrder">Order Number (Optional)</label>
+                        <input type="text" id="redeemGiftCardOrder" placeholder="Enter order number">
+                    </div>
+                    <div class="form-group">
+                        <label for="redeemGiftCardNotes">Notes (Optional)</label>
+                        <textarea id="redeemGiftCardNotes" placeholder="Enter notes"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancelRedeemGiftCardBtn">Cancel</button>
+                <button class="confirm-btn" id="confirmRedeemGiftCardBtn">Confirm Redemption</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redeem Coupon Modal -->
+    <div id="redeemCouponModal" class="modal">
+        <div class="modal-content redeem-modal">
+            <div class="modal-header">
+                <h2>Redeem Coupon</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="redeem-form">
+                    <div class="form-group">
+                        <label for="redeemCouponCode">Coupon Code</label>
+                        <input type="text" id="redeemCouponCode" placeholder="Enter coupon code" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="redeemCouponDiscount">Discount</label>
+                        <input type="text" id="redeemCouponDiscount" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="redeemCouponOrder">Order Number</label>
+                        <input type="text" id="redeemCouponOrder" placeholder="Enter order number">
+                    </div>
+                    <div class="form-group">
+                        <label for="redeemCouponAmount">Order Amount</label>
+                        <input type="number" id="redeemCouponAmount" placeholder="Enter order amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="redeemCouponCustomer">Customer (Optional)</label>
+                        <input type="text" id="redeemCouponCustomer" placeholder="Enter customer name">
+                    </div>
+                    <div class="form-group">
+                        <label for="redeemCouponNotes">Notes (Optional)</label>
+                        <textarea id="redeemCouponNotes" placeholder="Enter notes"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancelRedeemCouponBtn">Cancel</button>
+                <button class="confirm-btn" id="confirmRedeemCouponBtn">Confirm Redemption</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Gift Card Modal -->
+    <div id="searchGiftCardModal" class="modal">
+        <div class="modal-content search-modal">
+            <div class="modal-header">
+                <h2>Search Gift Card</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="searchGiftCardNumber">Gift Card Number</label>
+                        <input type="text" id="searchGiftCardNumber" placeholder="Enter gift card number">
+                    </div>
+                    <button class="search-btn" id="searchGiftCardBtn">Search</button>
+                </div>
+                <div class="search-results" id="giftCardSearchResults">
+                    <!-- Search results will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Coupon Modal -->
+    <div id="searchCouponModal" class="modal">
+        <div class="modal-content search-modal">
+            <div class="modal-header">
+                <h2>Search Coupon</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="searchCouponCode">Coupon Code</label>
+                        <input type="text" id="searchCouponCode" placeholder="Enter coupon code">
+                    </div>
+                    <button class="search-btn" id="searchCouponBtn">Search</button>
+                </div>
+                <div class="search-results" id="couponSearchResults">
+                    <!-- Search results will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/gift-coupons.js"></script>
+</body>
+</html>

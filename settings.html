@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - TenVerse POS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/logo.svg" alt="TenVerse POS">
+                <span class="logo-text">TenVerse</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="pos.html" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>POS</span>
+                </a>
+                <a href="orders.html" class="menu-item">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Orders</span>
+                </a>
+                <a href="kds.html" class="menu-item">
+                    <i class="fas fa-utensils"></i>
+                    <span>Kitchen</span>
+                </a>
+                <a href="menu-dashboard.html" class="menu-item">
+                    <i class="fas fa-book-open"></i>
+                    <span>Menu</span>
+                </a>
+                <a href="customers.html" class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                </a>
+                <a href="gift-coupons.html" class="menu-item">
+                    <i class="fas fa-gift"></i>
+                    <span>Gift & Coupons</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="settings.html" class="menu-item active">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <div class="user-details">
+                            <span class="user-name">John Doe</span>
+                            <span class="user-role">Admin</span>
+                        </div>
+                        <div class="user-avatar">
+                            <img src="assets/avatar.jpg" alt="User Avatar">
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </header>
+
+            <!-- Settings Container -->
+            <div class="settings-container">
+                <!-- Settings Sidebar -->
+                <div class="settings-sidebar">
+                    <div class="settings-nav">
+                        <div class="settings-nav-item active" data-tab="restaurant-profile">
+                            <i class="fas fa-store"></i>
+                            <span>Restaurant Profile</span>
+                        </div>
+                        <div class="settings-nav-item" data-tab="table-management">
+                            <i class="fas fa-chair"></i>
+                            <span>Table Management</span>
+                        </div>
+                        <div class="settings-nav-item" data-tab="staff-management">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Staff Management</span>
+                        </div>
+                        <div class="settings-nav-item" data-tab="taxes-charges">
+                            <i class="fas fa-percentage"></i>
+                            <span>Taxes & Charges</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Content -->
+                <div class="settings-content">
+                    <!-- Horizontal Tab Navigation -->
+                    <div class="settings-tabs-nav">
+                        <div class="settings-nav-item active" data-tab="restaurant-profile">
+                            <i class="fas fa-store"></i>
+                            <span>Restaurant Profile</span>
+                        </div>
+                        <div class="settings-nav-item" data-tab="table-management">
+                            <i class="fas fa-chair"></i>
+                            <span>Table Management</span>
+                        </div>
+                        <div class="settings-nav-item" data-tab="staff-management">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Staff Management</span>
+                        </div>
+                        <div class="settings-nav-item" data-tab="taxes-charges">
+                            <i class="fas fa-percentage"></i>
+                            <span>Taxes & Charges</span>
+                        </div>
+                    </div>
+                    <!-- Restaurant Profile Tab -->
+                    <div class="settings-tab active" id="restaurant-profile">
+                        <div class="settings-header">
+                            <h2>Restaurant Profile</h2>
+                            <button class="save-btn" id="saveRestaurantProfile">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                        </div>
+                        <div class="settings-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="restaurantName">Restaurant Name</label>
+                                    <input type="text" id="restaurantName" placeholder="Enter restaurant name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="restaurantPhone">Phone Number</label>
+                                    <input type="text" id="restaurantPhone" placeholder="Enter phone number">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="restaurantEmail">Email</label>
+                                    <input type="email" id="restaurantEmail" placeholder="Enter email address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="restaurantWebsite">Website URL</label>
+                                    <input type="url" id="restaurantWebsite" placeholder="Enter website URL">
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="restaurantAddress">Address</label>
+                                <textarea id="restaurantAddress" placeholder="Enter full address"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="restaurantTaxId">Tax Identification Number</label>
+                                    <input type="text" id="restaurantTaxId" placeholder="Enter tax ID">
+                                </div>
+                                <div class="form-group">
+                                    <label>Restaurant Logo</label>
+                                    <div class="logo-upload">
+                                        <div class="logo-preview" id="logoPreview">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <span>Upload Logo</span>
+                                        </div>
+                                        <input type="file" id="logoUpload" accept="image/*">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Business Hours</label>
+                                <div class="business-hours" id="businessHours">
+                                    <!-- Business hours will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Table Management Tab -->
+                    <div class="settings-tab" id="table-management">
+                        <div class="settings-header">
+                            <h2>Table Management</h2>
+                            <div class="header-actions">
+                                <button class="add-btn" id="addTableBtn">
+                                    <i class="fas fa-plus"></i> Add Table
+                                </button>
+                                <button class="save-btn" id="saveTableManagement">
+                                    <i class="fas fa-save"></i> Save Changes
+                                </button>
+                            </div>
+                        </div>
+                        <div class="tables-container">
+                            <div class="tables-list" id="tablesList">
+                                <!-- Tables will be populated here -->
+                            </div>
+                            <div class="table-layout">
+                                <div class="layout-header">
+                                    <h3>Table Layout</h3>
+                                    <div class="layout-actions">
+                                        <button class="layout-btn" id="editLayoutBtn">
+                                            <i class="fas fa-edit"></i> Edit Layout
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="layout-canvas" id="tableLayoutCanvas">
+                                    <!-- Table layout will be displayed here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Staff Management Tab -->
+                    <div class="settings-tab" id="staff-management">
+                        <div class="settings-header">
+                            <h2>Staff Management</h2>
+                            <div class="header-actions">
+                                <button class="add-btn" id="addStaffBtn">
+                                    <i class="fas fa-plus"></i> Add Staff
+                                </button>
+                                <button class="save-btn" id="saveStaffManagement">
+                                    <i class="fas fa-save"></i> Save Changes
+                                </button>
+                            </div>
+                        </div>
+                        <div class="staff-container">
+                            <div class="staff-list" id="staffList">
+                                <!-- Staff members will be populated here -->
+                            </div>
+                            <div class="roles-permissions">
+                                <div class="roles-header">
+                                    <h3>Roles & Permissions</h3>
+                                    <button class="add-btn" id="addRoleBtn">
+                                        <i class="fas fa-plus"></i> Add Role
+                                    </button>
+                                </div>
+                                <div class="roles-list" id="rolesList">
+                                    <!-- Roles will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Taxes & Charges Tab -->
+                    <div class="settings-tab" id="taxes-charges">
+                        <div class="settings-header">
+                            <h2>Taxes & Charges</h2>
+                            <div class="header-actions">
+                                <button class="add-btn" id="addTaxBtn">
+                                    <i class="fas fa-plus"></i> Add Tax
+                                </button>
+                                <button class="save-btn" id="saveTaxesCharges">
+                                    <i class="fas fa-save"></i> Save Changes
+                                </button>
+                            </div>
+                        </div>
+                        <div class="taxes-container">
+                            <div class="tax-settings">
+                                <div class="form-group switch-group">
+                                    <label for="enableTax">Enable Tax</label>
+                                    <label class="switch">
+                                        <input type="checkbox" id="enableTax">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="tax-rates" id="taxRates">
+                                    <!-- Tax rates will be populated here -->
+                                </div>
+                            </div>
+                            <div class="charges-settings">
+                                <h3>Additional Charges</h3>
+                                <div class="charges-list" id="chargesList">
+                                    <!-- Charges will be populated here -->
+                                </div>
+                                <button class="add-btn" id="addChargeBtn">
+                                    <i class="fas fa-plus"></i> Add Charge
+                                </button>
+                            </div>
+                            <div class="rounding-settings">
+                                <h3>Rounding Rules</h3>
+                                <div class="form-group switch-group">
+                                    <label for="enableRounding">Enable Rounding</label>
+                                    <label class="switch">
+                                        <input type="checkbox" id="enableRounding">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="roundingRule">Rounding Rule</label>
+                                    <select id="roundingRule">
+                                        <option value="nearest">Nearest</option>
+                                        <option value="up">Round Up</option>
+                                        <option value="down">Round Down</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="roundingValue">Rounding Value</label>
+                                    <select id="roundingValue">
+                                        <option value="0.05">0.05</option>
+                                        <option value="0.1">0.10</option>
+                                        <option value="0.5">0.50</option>
+                                        <option value="1">1.00</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Table Modal -->
+    <div class="modal" id="addTableModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Table</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="tableNumber">Table Number</label>
+                    <input type="text" id="tableNumber" placeholder="Enter table number">
+                </div>
+                <div class="form-group">
+                    <label for="tableName">Table Name (Optional)</label>
+                    <input type="text" id="tableName" placeholder="Enter table name">
+                </div>
+                <div class="form-group">
+                    <label for="tableCapacity">Maximum Capacity</label>
+                    <input type="number" id="tableCapacity" placeholder="Enter maximum capacity" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="tableSection">Section</label>
+                    <select id="tableSection">
+                        <option value="main">Main</option>
+                        <option value="bar">Bar</option>
+                        <option value="patio">Patio</option>
+                        <option value="private">Private</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancelAddTable">Cancel</button>
+                <button class="confirm-btn" id="confirmAddTable">Add Table</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Staff Modal -->
+    <div class="modal" id="addStaffModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Staff</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="staffName">Full Name</label>
+                        <input type="text" id="staffName" placeholder="Enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="staffRole">Role</label>
+                        <select id="staffRole">
+                            <option value="admin">Admin</option>
+                            <option value="manager">Manager</option>
+                            <option value="waiter">Waiter</option>
+                            <option value="cashier">Cashier</option>
+                            <option value="kitchen">Kitchen Staff</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="staffPhone">Phone Number</label>
+                        <input type="text" id="staffPhone" placeholder="Enter phone number">
+                    </div>
+                    <div class="form-group">
+                        <label for="staffEmail">Email</label>
+                        <input type="email" id="staffEmail" placeholder="Enter email address">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="staffUsername">Username</label>
+                        <input type="text" id="staffUsername" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="staffPassword">Password</label>
+                        <input type="password" id="staffPassword" placeholder="Enter password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="staffPin">PIN (for quick login)</label>
+                    <input type="text" id="staffPin" placeholder="Enter 4-digit PIN" maxlength="4">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancelAddStaff">Cancel</button>
+                <button class="confirm-btn" id="confirmAddStaff">Add Staff</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Tax Modal -->
+    <div class="modal" id="addTaxModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Tax</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="taxName">Tax Name</label>
+                    <input type="text" id="taxName" placeholder="Enter tax name (e.g., GST, VAT)">
+                </div>
+                <div class="form-group">
+                    <label for="taxRate">Tax Rate (%)</label>
+                    <input type="number" id="taxRate" placeholder="Enter tax rate" min="0" step="0.01">
+                </div>
+                <div class="form-group switch-group">
+                    <label for="taxApplyToAll">Apply to all items</label>
+                    <label class="switch">
+                        <input type="checkbox" id="taxApplyToAll" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancelAddTax">Cancel</button>
+                <button class="confirm-btn" id="confirmAddTax">Add Tax</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Charge Modal -->
+    <div class="modal" id="addChargeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Charge</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="chargeName">Charge Name</label>
+                    <input type="text" id="chargeName" placeholder="Enter charge name (e.g., Service Charge)">
+                </div>
+                <div class="form-group">
+                    <label for="chargeType">Charge Type</label>
+                    <select id="chargeType">
+                        <option value="percentage">Percentage (%)</option>
+                        <option value="fixed">Fixed Amount</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="chargeValue">Value</label>
+                    <input type="number" id="chargeValue" placeholder="Enter value" min="0" step="0.01">
+                </div>
+                <div class="form-group switch-group">
+                    <label for="chargeApplyToAll">Apply to all orders</label>
+                    <label class="switch">
+                        <input type="checkbox" id="chargeApplyToAll" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="cancel-btn" id="cancelAddCharge">Cancel</button>
+                <button class="confirm-btn" id="confirmAddCharge">Add Charge</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>

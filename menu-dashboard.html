@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Management - TenVerse POS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/menu-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container menu-dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/logo.svg" alt="TenVerse POS">
+                <span class="logo-text">TenVerse</span>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="index.html" class="menu-item">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>POS</span>
+                </a>
+                <a href="menu-dashboard.html" class="menu-item active">
+                    <i class="fas fa-utensils"></i>
+                    <span>Menu</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-box"></i>
+                    <span>Inventory</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search menu items, categories...">
+                </div>
+                <div class="user-actions">
+                    <span class="store-name">Café TenVerse</span>
+                    <div class="user-profile">
+                        <img src="assets/avatar.svg" alt="User Avatar">
+                        <div class="user-dropdown">
+                            <span class="username">John Doe</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </header>
+
+            <!-- Menu Dashboard Content -->
+            <div class="dashboard-container">
+                <!-- Statistics Cards -->
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-hamburger"></i></div>
+                        <div class="stat-info">
+                            <h3>Total Menu Items</h3>
+                            <p class="stat-value">48</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-tags"></i></div>
+                        <div class="stat-info">
+                            <h3>Total Categories</h3>
+                            <p class="stat-value">8</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="stat-info">
+                            <h3>Active Combos</h3>
+                            <p class="stat-value">12</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-exclamation-circle"></i></div>
+                        <div class="stat-info">
+                            <h3>Unavailable Items</h3>
+                            <p class="stat-value">3</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions-wrapper">
+                    <div class="quick-actions">
+                        <button class="action-btn" id="addItemBtn">
+                            <i class="fas fa-plus"></i> Add Menu Item
+                        </button>
+                        <button class="action-btn" id="addCategoryBtn">
+                            <i class="fas fa-folder-plus"></i> Add Category
+                        </button>
+                        <button class="action-btn" id="createComboBtn">
+                            <i class="fas fa-object-group"></i> Create Combo
+                        </button>
+                        <button class="action-btn" id="bulkImportBtn">
+                            <i class="fas fa-file-import"></i> Bulk Import
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Tab Navigation -->
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="menu-items">Menu Items</button>
+                    <button class="tab-btn" data-tab="categories">Categories</button>
+                    <button class="tab-btn" data-tab="combos">Combos</button>
+                    <button class="tab-btn" data-tab="settings">Settings</button>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <!-- Menu Items Tab -->
+                    <div class="tab-pane active" id="menu-items-tab">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Cost</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Sample data - will be populated dynamically -->
+                                    <tr>
+                                        <td><img src="assets/products/coffee.jpg" alt="Cappuccino" class="item-thumbnail"></td>
+                                        <td>
+                                            <div class="item-name">Cappuccino</div>
+                                            <div class="item-tags">
+                                                <span class="tag">bestseller</span>
+                                                <span class="tag">hot</span>
+                                            </div>
+                                        </td>
+                                        <td>Beverages</td>
+                                        <td>$4.50</td>
+                                        <td>$1.25</td>
+                                        <td><span class="status-badge in-stock">In Stock</span></td>
+                                        <td class="actions">
+                                            <button class="action-icon edit"><i class="fas fa-edit"></i></button>
+                                            <button class="action-icon delete"><i class="fas fa-trash"></i></button>
+                                            <button class="action-icon toggle"><i class="fas fa-power-off"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories Tab -->
+                    <div class="tab-pane" id="categories-tab">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Icon</th>
+                                        <th>Name</th>
+                                        <th>Display Order</th>
+                                        <th>Item Count</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Sample data - will be populated dynamically -->
+                                    <tr>
+                                        <td><i class="fas fa-coffee category-icon"></i></td>
+                                        <td>Beverages</td>
+                                        <td>1</td>
+                                        <td>12</td>
+                                        <td class="actions">
+                                            <button class="action-icon edit"><i class="fas fa-edit"></i></button>
+                                            <button class="action-icon delete"><i class="fas fa-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Combos Tab -->
+                    <div class="tab-pane" id="combos-tab">
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Items</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Sample data - will be populated dynamically -->
+                                    <tr>
+                                        <td>Breakfast Special</td>
+                                        <td>$12.99</td>
+                                        <td>Coffee, Sandwich, Muffin</td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td class="actions">
+                                            <button class="action-icon edit"><i class="fas fa-edit"></i></button>
+                                            <button class="action-icon delete"><i class="fas fa-trash"></i></button>
+                                            <button class="action-icon view"><i class="fas fa-eye"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <!-- Settings Tab -->
+                    <div class="tab-pane" id="settings-tab">
+                        <form class="settings-form" id="menuSettingsForm">
+                            <div class="form-group">
+                                <label for="currencySymbol">Default Currency Symbol</label>
+                                <input type="text" id="currencySymbol" value="$" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="defaultTaxRate">Default Tax Rate (%)</label>
+                                <input type="number" id="defaultTaxRate" value="10" min="0" max="100" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="globalMenuNotes">Global Menu Notes</label>
+                                <textarea id="globalMenuNotes" rows="3" placeholder="E.g., Allergy information, VAT notice"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="operationalHours">Menu Operational Hours Notes</label>
+                                <textarea id="operationalHours" rows="3" placeholder="E.g., Breakfast: 7AM-11AM, Lunch: 11AM-3PM"></textarea>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="showCostPrice" checked>
+                                <label for="showCostPrice">Show Item Cost Prices in Table</label>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Save Settings</button>
+                                <button type="reset" class="btn-secondary">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modals -->
+    <!-- Add/Edit Menu Item Modal -->
+    <div class="modal" id="menuItemModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h2 id="menuItemModalTitle">Add Menu Item</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="menuItemForm">
+                    <div class="form-section">
+                        <h3>Basic Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="itemName">Item Name <span class="required">*</span></label>
+                                <input type="text" id="itemName" name="itemName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="itemCategory">Category <span class="required">*</span></label>
+                                <select id="itemCategory" name="itemCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="beverages">Beverages</option>
+                                    <option value="food">Food</option>
+                                    <option value="desserts">Desserts</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemDescription">Description</label>
+                            <textarea id="itemDescription" name="itemDescription" rows="2"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="basePrice">Base Price <span class="required">*</span></label>
+                                <input type="number" id="basePrice" name="basePrice" min="0" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="costPrice">Cost Price</label>
+                                <input type="number" id="costPrice" name="costPrice" min="0" step="0.01">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="itemTags">Tags (comma separated)</label>
+                                <input type="text" id="itemTags" name="itemTags" placeholder="E.g., spicy, vegan, bestseller">
+                            </div>
+                            <div class="form-group">
+                                <label for="taxGroup">Tax Group</label>
+                                <select id="taxGroup" name="taxGroup">
+                                    <option value="default">Default Tax</option>
+                                    <option value="none">No Tax</option>
+                                    <option value="reduced">Reduced Tax</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="itemImage">Item Image</label>
+                                <input type="file" id="itemImage" name="itemImage" accept="image/*">
+                                <div class="image-preview" id="imagePreview"></div>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="itemAvailability" name="itemAvailability" checked>
+                                <label for="itemAvailability">In Stock</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="allergenNotes">Allergen/Ingredient Notes</label>
+                            <textarea id="allergenNotes" name="allergenNotes" rows="2" placeholder="E.g., Contains nuts, gluten"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Variants & Options</h3>
+                        <div class="variants-container" id="variantsContainer">
+                            <!-- Variant groups will be added here dynamically -->
+                        </div>
+                        <button type="button" class="btn-secondary add-btn" id="addVariantGroup">
+                            <i class="fas fa-plus"></i> Add Variant Group
+                        </button>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Add-ons</h3>
+                        <div class="addons-container" id="addonsContainer">
+                            <!-- Add-on groups will be added here dynamically -->
+                        </div>
+                        <button type="button" class="btn-secondary add-btn" id="addAddonGroup">
+                            <i class="fas fa-plus"></i> Add Add-on Group
+                        </button>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save Menu Item</button>
+                        <button type="button" class="btn-secondary" id="cancelItemBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Category Modal -->
+    <div class="modal" id="categoryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="categoryModalTitle">Add Category</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="categoryForm">
+                    <div class="form-group">
+                        <label for="categoryName">Category Name <span class="required">*</span></label>
+                        <input type="text" id="categoryName" name="categoryName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoryIcon">Category Icon</label>
+                        <input type="text" id="categoryIcon" name="categoryIcon" placeholder="FontAwesome class or image URL">
+                        <div class="icon-preview" id="iconPreview"><i class="fas fa-utensils"></i></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="displayOrder">Display Order</label>
+                        <input type="number" id="displayOrder" name="displayOrder" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="labelColor">Label Color</label>
+                        <input type="color" id="labelColor" name="labelColor" value="#FF5B7A">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save Category</button>
+                        <button type="button" class="btn-secondary" id="cancelCategoryBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create/Edit Combo Modal -->
+    <div class="modal" id="comboModal">
+        <div class="modal-content large-modal">
+            <div class="modal-header">
+                <h2 id="comboModalTitle">Create Combo</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="comboForm">
+                    <div class="form-group">
+                        <label for="comboName">Combo Name <span class="required">*</span></label>
+                        <input type="text" id="comboName" name="comboName" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="comboPrice">Combo Price <span class="required">*</span></label>
+                            <input type="number" id="comboPrice" name="comboPrice" min="0" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="displayPriority">Display Priority</label>
+                            <input type="number" id="displayPriority" name="displayPriority" min="1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="comboDescription">Description</label>
+                        <textarea id="comboDescription" name="comboDescription" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="comboImage">Combo Image URL</label>
+                        <input type="text" id="comboImage" name="comboImage" placeholder="Enter image URL">
+                        <div class="image-preview" id="comboImagePreview"></div>
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="timeBound" name="timeBound">
+                        <label for="timeBound">Time-bound combo</label>
+                    </div>
+                    <div class="time-bound-options" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="startDate">Start Date/Time</label>
+                                <input type="datetime-local" id="startDate" name="startDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="endDate">End Date/Time</label>
+                                <input type="datetime-local" id="endDate" name="endDate">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Combo Items</h3>
+                        <div class="combo-items-container" id="comboItemsContainer">
+                            <!-- Combo items will be added here -->
+                            <div class="combo-placeholder">
+                                <p>No items added to this combo yet. Use the button below to add items.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-secondary add-btn" id="addComboItem">
+                            <i class="fas fa-plus"></i> Add Item to Combo
+                        </button>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Save Combo</button>
+                        <button type="button" class="btn-secondary" id="cancelComboBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/menu-dashboard.js"></script>
+</body>
+</html> 

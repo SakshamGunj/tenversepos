@@ -1,0 +1,345 @@
+/* Billing CSS */
+
+/* Bill Modal */
+.bill-modal .modal-content {
+    width: 800px;
+    max-width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.bill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.bill-info {
+    flex: 1;
+}
+
+.bill-id {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+.bill-datetime {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+.bill-table {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+}
+
+/* Bill Items */
+.bill-items-header {
+    display: grid;
+    grid-template-columns: 1fr 80px 100px 120px;
+    gap: 15px;
+    padding: 10px 15px;
+    background-color: #F8FAFC;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.bill-items-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.bill-item {
+    display: grid;
+    grid-template-columns: 1fr 80px 100px 120px;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+}
+
+.bill-item:last-child {
+    border-bottom: none;
+}
+
+.bill-item-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-item-name {
+    font-weight: 500;
+}
+
+.bill-item-options {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 3px;
+}
+
+.bill-item-quantity {
+    text-align: center;
+    font-weight: 500;
+}
+
+.bill-item-price {
+    text-align: right;
+    color: var(--text-light);
+}
+
+.bill-item-subtotal {
+    text-align: right;
+    font-weight: 500;
+}
+
+/* Bill Totals */
+.bill-totals {
+    background-color: #F8FAFC;
+    padding: 15px;
+    border-radius: var(--radius-md);
+    margin-bottom: 20px;
+}
+
+.bill-total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.bill-total-row:last-child {
+    margin-bottom: 0;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border-color);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Bill Payment */
+.bill-payment {
+    margin-bottom: 20px;
+}
+
+.bill-payment-header {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.payment-method-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.payment-method-btn i {
+    font-size: 20px;
+}
+
+.payment-method-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Bill Customer Info */
+.bill-customer-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.bill-input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.bill-input-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.bill-input-group input,
+.bill-input-group textarea {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+}
+
+.bill-input-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Bill Actions */
+.bill-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.bill-action-group {
+    display: flex;
+    gap: 10px;
+}
+
+.bill-btn {
+    padding: 10px 15px;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.bill-btn i {
+    font-size: 16px;
+}
+
+.bill-btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.bill-btn.primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.bill-btn.secondary {
+    background-color: #F1F5F9;
+    color: var(--text-color);
+}
+
+.bill-btn.secondary:hover {
+    background-color: #E2E8F0;
+}
+
+.bill-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Print Styles */
+.bill-print-container {
+    display: none;
+}
+
+@media print {
+    .bill-print-container {
+        display: block;
+        width: 80mm;
+        font-family: 'Courier New', monospace;
+        padding: 10mm;
+    }
+    
+    .print-header {
+        text-align: center;
+        margin-bottom: 10mm;
+    }
+    
+    .print-header h1 {
+        font-size: 18pt;
+        margin: 0 0 5mm 0;
+    }
+    
+    .print-header p {
+        font-size: 10pt;
+        margin: 0 0 2mm 0;
+    }
+    
+    .print-bill-info {
+        margin-bottom: 10mm;
+        font-size: 10pt;
+    }
+    
+    .print-bill-info p {
+        margin: 0 0 2mm 0;
+    }
+    
+    .print-bill-items table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 10mm;
+        font-size: 9pt;
+    }
+    
+    .print-bill-items th {
+        border-bottom: 1px solid #000;
+        text-align: left;
+        padding: 2mm 0;
+    }
+    
+    .print-bill-items td {
+        padding: 2mm 0;
+        vertical-align: top;
+    }
+    
+    .print-bill-items td small {
+        font-size: 8pt;
+    }
+    
+    .print-bill-totals {
+        margin-bottom: 10mm;
+        font-size: 10pt;
+    }
+    
+    .print-bill-totals .total-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2mm;
+    }
+    
+    .print-bill-totals .grand-total {
+        font-weight: bold;
+        border-top: 1px solid #000;
+        padding-top: 2mm;
+    }
+    
+    .print-payment-info {
+        margin-bottom: 10mm;
+        font-size: 10pt;
+    }
+    
+    .print-footer {
+        text-align: center;
+        font-size: 9pt;
+        margin-top: 10mm;
+        border-top: 1px dashed #000;
+        padding-top: 5mm;
+    }
+    
+    .print-footer p {
+        margin: 0 0 2mm 0;
+    }
+} 
